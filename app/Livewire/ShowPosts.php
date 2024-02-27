@@ -12,16 +12,22 @@ class ShowPosts extends Component
     public $posts;
     private PostRepositoryInterface $postRepository;
 
-    public function mount(PostRepositoryInterface $postRepository)
+    public function boot(PostRepositoryInterface $postRepository)
     {
+        //CORRECT WAY TO IMPLEMENT "DI" IN LIVEWIRE
         $this->postRepository = $postRepository;
+    }
+
+    public function mount()
+    {
         $this->posts = $this->postRepository->all();
     }
 
-    // public function delete(PostRepositoryInterface $posts, $postId)
-    // {
-    //     $posts->deletePost($postId);
-    // }
+    public function delete($postId)
+    {
+        $this->postRepository->deletePost($postId);
+        $this->posts = $this->postRepository->all();
+    }
 
     public function render()
     {

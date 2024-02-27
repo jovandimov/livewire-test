@@ -1,0 +1,6 @@
+Added materials
+
+for creating php repositories -> https://www.twilio.com/en-us/blog/repository-pattern-in-laravel-application
+
+
+adding "DI" repository to livewire app -> https://dev.to/iamkirillart/how-to-implement-dependency-injection-in-laravel-livewire-con

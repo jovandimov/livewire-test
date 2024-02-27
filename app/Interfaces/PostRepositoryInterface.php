@@ -2,6 +2,9 @@
 
 namespace App\Interfaces;
 
-interface PostRepositoryInterface {
+interface PostRepositoryInterface
+{
     public function all();
+
+    public function deletePost(int $id);
 }
