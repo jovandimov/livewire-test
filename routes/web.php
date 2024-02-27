@@ -1,5 +1,10 @@
 <?php
 
+use App\Livewire\Counter;
+use App\Livewire\CreatePost;
+use App\Livewire\ShowPost;
+use App\Livewire\TodoList;
+use App\Livewire\UpdatePost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/counter', Counter::class);
+Route::get('/create-post', CreatePost::class);
+Route::get('/posts/{post}', ShowPost::class);
+Route::get('/todos', TodoList::class);
+Route::get('/update-posts/{post}',UpdatePost::class);
