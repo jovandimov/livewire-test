@@ -3,6 +3,7 @@
 use App\Livewire\Counter;
 use App\Livewire\CreatePost;
 use App\Livewire\ShowPost;
+use App\Livewire\ShowPosts;
 use App\Livewire\TodoList;
 use App\Livewire\UpdatePost;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,4 @@ Route::get('/create-post', CreatePost::class);
 Route::get('/posts/{post}', ShowPost::class);
 Route::get('/todos', TodoList::class);
 Route::get('/update-posts/{post}',UpdatePost::class);
+Route::get('/show-posts',ShowPosts::class);
