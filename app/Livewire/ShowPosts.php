@@ -25,6 +25,11 @@ class ShowPosts extends Component
 
     public function delete($postId)
     {
+        // Always authorize server-side
+
+        
+        // $post = Post::findOrFail($postId);
+        // $this->authorize("delete",$post);
         $this->postRepository->deletePost($postId);
         $this->posts = $this->postRepository->all();
     }

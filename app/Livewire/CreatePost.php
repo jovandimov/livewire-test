@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\PostForm;
 use App\Models\Post;
 use Livewire\Component;
 
 class CreatePost extends Component
 {
-    public $title;
+    public PostForm $form;
+
 
     public $content;
 
@@ -21,10 +23,13 @@ class CreatePost extends Component
     }
     public function save()
     {
-        $post = Post::create([
-            'title' => $this->title,
-            'content' => $this->content ?? null
-        ]);
+        $this->validate();
+
+        Post::create(
+            $this->form->all()
+        );
+
+        $this->form->reset();
     }
     #[Layout('layout.app')]
     public function render()
