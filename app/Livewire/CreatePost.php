@@ -30,6 +30,8 @@ class CreatePost extends Component
         );
 
         $this->form->reset();
+
+        $this->dispatch('post-created', title: $this->form->title);
     }
     #[Layout('layout.app')]
     public function render()

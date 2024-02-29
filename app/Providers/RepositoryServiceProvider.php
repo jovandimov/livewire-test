@@ -14,7 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
+        // $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
+        $this->app->bind(\App\Interfaces\PostRepositoryInterface::class, \App\Repositories\PostRepository::class);
     }
 
     /**
