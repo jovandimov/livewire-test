@@ -15,7 +15,7 @@ class ShowPosts extends Component
 
     public function boot(PostRepositoryInterface $postRepository)
     {
-        // This is not correct way to add DI, because boot is called on every render of the page :)) ...
+        // This is not correct way to add DI, becaiuse boot s called on every request(both initial and subsequent) of the page :)) ...
         $this->postRepository = $postRepository;
         $this->posts = $this->postRepository->all();
     }
